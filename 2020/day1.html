@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 1</title>
+</head>
+<body>
+    <div id="results"></div>
+</body>
+</html>
+<script>
+    let doc 
+        async function loadDoc(filename) {
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            doc = this.responseText;
+            loadnumbers(doc);
+          }
+        };
+        xhttp.open("GET", filename, true);
+        xhttp.send();
+        return result = await xhttp.onreadystatechange;
+        }
+        function loadnumbers(text){
+            var numberArray = text.split("\n");
+            // console.log(numberArray);
+            for (i=0; i<numberArray.length; i++){
+                for (j=0; j<numberArray.length; j++){
+            document.getElementById("results").innerHTML+="...\n";
+                    if (numberArray[i]+numberArray[j]==2020){
+                        document.getElementById("results").innerHTML+= "Träff: " +numberArray[i]+" + " + numberArray[j] + " = " + numberArray[i]+numberArray[j] +"\n" 
+                        + umberArray[i]+" * " + numberArray[j] + " = " + numberArray[i]*numberArray[j];
+                    }
+                }
+            }
+        }
+        loadDoc("day1numbers.txt");
+</script>

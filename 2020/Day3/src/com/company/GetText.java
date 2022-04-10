@@ -1,0 +1,36 @@
+package com.company;
+
+import java.io.*;
+
+public class GetText {
+    public static String[] Open(String filename) throws FileNotFoundException {
+        try {
+            String line = null;
+            String[] returnarray;
+            InputStreamReader data = new InputStreamReader(new FileInputStream(filename), "Windows-1252");
+            BufferedReader getText = new BufferedReader(data);
+            // System.out.println("DEBUG - Encoding:" + data.getEncoding());
+            StringBuilder text = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+
+            while(null != (line = getText.readLine())) {
+                text.append(line);
+                text.append(ls);
+            }
+
+            getText.close();
+            returnarray = text.toString().split(ls);
+            return returnarray;
+        }
+        catch (FileNotFoundException e)
+        {
+            System.out.println("Kunde inte hitta filen '" + filename + "'");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("IOException!");
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+}
