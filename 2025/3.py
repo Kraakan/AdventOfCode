@@ -9,12 +9,12 @@ parser.add_argument(
 parser.add_argument(
     "--part_1",
     action='store_true',
-    help=""
+    help="Make the biggest number by picking two numbers."
     )
 parser.add_argument(
     "--part_2",
     action='store_true',
-    help=""
+    help="Make the biggest number by picking twelve numbers."
     )
 
 args = parser.parse_args()
