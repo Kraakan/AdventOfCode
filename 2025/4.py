@@ -14,7 +14,7 @@ parser.add_argument(
 parser.add_argument(
     "--part_2",
     action='store_true',
-    help=""
+    help="Remove @ symbols recursively. Uses curses."
     )
 
 args = parser.parse_args()
