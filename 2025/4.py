@@ -1,6 +1,6 @@
 import argparse
 
-parser = argparse.ArgumentParser(description="Day 2 of Advent of Code 2025")
+parser = argparse.ArgumentParser(description="Day 4 of Advent of Code 2025")
 parser.add_argument(
     "--test",
     action='store_true',
